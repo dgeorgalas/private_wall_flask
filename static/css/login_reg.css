@@ -1,0 +1,10 @@
+.registration{
+    display: inline-block;
+    margin-left: 20%;
+}
+
+.login{
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 20%;
+}

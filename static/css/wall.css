@@ -1,0 +1,60 @@
+.greeting{
+    display: inline-block;
+    margin-left: 50%;
+}
+
+.header{
+    display: inline-block;
+}
+
+
+.logout{
+    display: inline-block;
+    margin-left: 10%;
+}
+
+.received_messages{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 4%;
+}
+
+.send_messages{
+    display: inline-block;
+    margin-left: 30%;
+    border-left: 6px solid black;
+    padding-left: 10%;
+    height: 70%;
+}
+
+.send_messages p{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -1px;
+}
+
+form {
+    display: inline-block;
+}
+
+.send_messages h3{
+    text-decoration: underline;
+}
+
+.send_messages h4{
+    color: green;
+}
+
+.received_messages form{
+    display: inline-block;
+}
+
+.received_messages p{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.received_messages h2{
+    text-decoration: underline;
+}
+

@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wall.css')}}">
+</head>
+<body>
+    <div class = "header">
+        <h1>CodingDojo Wall</h1>
+    </div>
+    <div class = "greeting">
+        <h2>Welcome, {{session['first_name']}}!</h2>
+    </div>
+    <div class = "logout">
+        <a href="logout">Log Out</a>
+    </div>
+    <hr style = "border: 2px solid black"/>
+
+    <div class="received_messages">
+        <h2> {{messages_received}} message(s) for you</h2>
+        {% for message in messages %}
+            <h3>{{message.sent_from_first_name}} said</h3>
+            <p>"{{message.description}}"</p>
+            <form action="/delete_message" method="post">
+                <input style="width: 30px;height: 25px;" type="image" src="{{ url_for('static', filename='img/trash_can.png')}}" alt="Submit">
+                <input type="hidden" value="{{message.id}}" name="message_id">
+            </form>
+        {% endfor %}
+    </div>
+
+    <div class="send_messages">
+        <h3>Send Messages</h3>
+        <h4>You have sent {{messages_sent}} messages so far</h4>
+        {% for user in users %}
+            <p>{{user.first_name}}</p>
+            <form action="/send_message" method="post">
+            <textarea name="description"></textarea>
+            <input type="hidden" value="{{user.id}}" name="recipient_id">
+            <input type="submit" value="Send">
+            </form>
+            <br><br>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
